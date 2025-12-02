@@ -1,0 +1,46 @@
+<!-- Syntax: elem.getElementsBy*() is old, use document.querySelector() instead it
+return a collection of elements, so there’s "s" inside (getElements) i.e:
+elem.getElementsByTagName(tag) elem.getElementsByClassName(className)
+document.getElementsByName(name) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      <tr>
+        <td>Your age:</td>
+
+        <td>
+          <label>
+            <input type="radio" name="age" value="young" checked /> less than 18
+          </label>
+          <label>
+            <input type="radio" name="age" value="mature" /> from 18 to 50
+          </label>
+          <label>
+            <input type="radio" name="age" value="senior" /> more than 60
+          </label>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      let inputs = table.getElementsByTagName('input');
+
+      for (let input of inputs) {
+        alert(input.value + ': ' + input.checked);
+      }
+
+      let changeVal = (document.getElementsByTagName('input')[0].value = 5);
+      alert(changeVal);
+
+      let label = document.querySelector('label');
+      label.textContent = '5'; // replace the label text content on the DOM
+    </script>
+  </body>
+</html>
