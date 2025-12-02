@@ -1,0 +1,34 @@
+<!-- "getElementsBy*" return a live collection (always updates).
+"querySelectorAll" returns a static collection. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- USING getElementsBy -->
+    <!-- <div>First div</div>
+    <script>
+      let divs = document.getElementsByTagName('div');
+      alert(divs.length); // 1
+    </script>
+    <div>Second div</div>
+    <script>
+      alert(divs.length); // 2 -->
+
+    <!-- USING querySelectorAll -->
+    <div>First div</div>
+    <script>
+      let divs = document.querySelectorAll('div');
+      alert(divs.length); // 1
+    </script>
+
+    <div>Second div</div>
+    <script>
+      alert(divs.length); // 1
+    </script>
+  </body>
+</html>
