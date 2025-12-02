@@ -13,6 +13,10 @@ that interest us (with iterating over) -->
     <a href="http://example.com/file.zip">...</a>
     <a href="http://medium.com/@vetacode">...</a>
     <script>
+      alert(document.body.children); //[object HTMLClollection]
+      // More Readable showing tag
+      alert(Array.from(document.body.children).map((el) => el.tagName)); // A,A,SCRIPT
+
       // can be any collection instead of document.body.children
       for (let elem of document.body.children) {
         if (elem.matches('a[href$="zip"]')) {
