@@ -1,0 +1,29 @@
+<!-- Syntax: elem.querySelectorAll(css-selector) -->
+<!-- its powerful method coz we can use any CSS selector -->
+<!-- Pseudo-classes also works, i.e: document.querySelectorAll(':hover'). In nesting Order, from the outermost <html> to nested -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>The</li>
+      <li>test</li>
+    </ul>
+    <ul>
+      <li>has</li>
+      <li>passed</li>
+    </ul>
+
+    <script>
+      let elements = document.querySelectorAll('ul > li:last-child');
+      for (let elem of elements) {
+        alert(elem.innerHTML); // test, passed
+      }
+    </script>
+  </body>
+</html>
