@@ -1,0 +1,24 @@
+<!-- Syntax: elem.matches('css-selector') checks if elem matches the given
+CSS-selector. It returns true or false. It use when we want to FILTER elements
+that interest us (with iterating over) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="http://example.com/file.zip">...</a>
+    <a href="http://medium.com/@vetacode">...</a>
+    <script>
+      // can be any collection instead of document.body.children
+      for (let elem of document.body.children) {
+        if (elem.matches('a[href$="zip"]')) {
+          alert('The archive reference: ' + elem.href);
+        }
+      }
+    </script>
+  </body>
+</html>
