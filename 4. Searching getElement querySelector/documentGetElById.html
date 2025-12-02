@@ -1,0 +1,32 @@
+<!-- Syntax: document.getElementById(id) -->
+<!-- The id must be unique. There can be only one element in the document with the given id. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="elem">
+      <div id="elem-content">Element</div>
+    </div>
+    <script>
+      // elem.style.backgroundColor = 'aqua';
+      // elem.style.color = 'red';
+
+      // OR create new variable
+
+      let getElem = document.getElementById('elem');
+      getElem.style.backgroundColor = 'red';
+      getElem.style.color = 'yellow';
+
+      // let getFont = document.getElementById('elem-content');
+      // getFont.style.color = 'white';
+
+      // OR using global window (DONT USE THIS, NOT RECOMENDED)
+      // window['elem-content'].style.backgroundColor = 'yellow';
+    </script>
+  </body>
+</html>
