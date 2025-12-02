@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <div>Begin</div>
+
+    <ul>
+      <li>Information</li>
+    </ul>
+
+    <div>End</div>
+
+    <script>
+      elem.childNodes[0] === elem.firstChild;
+      elem.childNodes[elem.childNodes.length - 1] === elem.lastChild;
+      for (let i = 0; i < document.body.childNodes.length; i++) {
+        alert(document.body.childNodes[i]); // Text, DIV, Text, UL, ..., SCRIPT
+      }
+    </script>
+    ...more stuff...
+  </body>
+</html>

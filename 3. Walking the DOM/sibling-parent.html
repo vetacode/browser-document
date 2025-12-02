@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // parent of <body> is <html>
+      alert(document.body.parentNode === document.documentElement); // true
+
+      // after <head> goes <body>
+      alert(document.head.nextSibling); // HTMLBodyElement
+
+      // before <body> goes <head>
+      alert(document.body.previousSibling); // HTMLHeadElement
+    </script>
+  </body>
+</html>

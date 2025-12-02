@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (let node of document.body.childNodes) {
+        alert(node); // shows all nodes from the collection
+      }
+
+      // shows 0, 1, length, item, values and more.
+      for (let prop in document.body.childNodes) alert(prop);
+      //NOTE: dont use for..in
+    </script>
+  </body>
+</html>

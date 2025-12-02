@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Users:</div>
+    <ul>
+      <li>John</li>
+      <li>Pete</li>
+    </ul>
+    <script>
+      //get <div> dom node
+      document.body.firstElementChild;
+      // or
+      document.body.children[0];
+      // or (the first node is space, so we take 2nd)
+      document.body.childNodes[1];
+
+      //get <ul> dom node
+      document.body.lastElementChild;
+      // or
+      document.body.children[1];
+
+      //get The second <li> (with Pete):
+      // get <ul>, and then get its last element child
+      document.body.lastElementChild.lastElementChild;
+    </script>
+  </body>
+</html>
