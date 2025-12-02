@@ -1,0 +1,35 @@
+<!-- Syntax: elem.closest('css-selector')
+elem.closest(css) looks for the nearest ancestor that matches the CSS-selector.
+It returns ancestor element tags -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Contents</h1>
+
+    <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+      </ul>
+    </div>
+
+    <script>
+      let chapter = document.querySelector('.chapter');
+
+      alert(chapter.closest('.book')); // [object HTMLUListElement]
+      alert(chapter.closest('.contents')); // [object HTMLDivElement]
+
+      //to show the tagName
+      let ulist = chapter.closest('.book');
+      alert(ulist.tagName); //UL
+
+      alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
+    </script>
+  </body>
+</html>
