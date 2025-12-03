@@ -7,5 +7,19 @@
         <b>Information</b>
       </li>
     </ul>
+
+    <script>
+      for (let i = 0; i < document.body.childNodes.length; i++) {
+        alert(document.body.childNodes[i]); // Text, DIV, Text, UL, ..., SCRIPT
+      }
+    </script>
   </body>
 </html>
+
+<!-- NOTES
+Properties firstChild and lastChild give fast access to the first and last children.
+
+They are just shorthands. If there exist child nodes, then the following is always true:
+
+elem.childNodes[0] === elem.firstChild
+elem.childNodes[elem.childNodes.length - 1] === elem.lastChild -->
