@@ -1,5 +1,5 @@
 <!-- 'nodeValue' and 'data' properties are almost same of innerHTML, but for TEXT nodes.
-kita pake 'data' saja krn lbh ringkas -->
+bisa pake 'data' aja krn lbh ringkas -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ kita pake 'data' saja krn lbh ringkas -->
 
       alert(text.nodeName); // #text (yg keambil adalah SPACE antara <body> dan Hello, which is nodeName nya #text)
       console.log(text.nextSibling.nodeName); //#comment
-      alert(text.nodeValue); // Hello (yg keambil adalah value/nilai dari firstChild <body> yaitu 'SPACE kosong' dan text Hello. so, SPACE juga termasuk value)
+      alert(text.nodeValue); // [space] Hello (yg keambil adalah value/data dari firstChild <body> yaitu 'SPACE kosong' dan text Hello. so, SPACE juga termasuk value)
 
       alert(comment.nodeName); //#comment
       console.log(comment.nextSibling.nodeName); //#text
