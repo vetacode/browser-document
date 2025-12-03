@@ -1,0 +1,29 @@
+<!-- nodeType
+It has a numeric value:
+
+elem.nodeType == 1 for element nodes,
+elem.nodeType == 3 for text nodes,
+elem.nodeType == 9 for the document object, -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let elem = document.body;
+
+      // let's examine: what type of node is in elem?
+      alert(elem.nodeType); // 1 => element
+
+      // and its first child is...
+      alert(elem.firstChild.nodeType); // 3 => text
+
+      // for the document object, the type is 9
+      alert(document.nodeType); // 9
+    </script>
+  </body>
+</html>
