@@ -59,38 +59,27 @@ Open the page table.html in a separate window and make use of browser tools for 
 
       <input type="submit" value="Search!" />
     </form>
-    <script
-      defer=""
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"version":"2024.11.0","token":"0cda2462c5944515bb0255634e18140a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-      crossorigin="anonymous"
-    >
-       // 1. The table with `id="age-table"`.
-       let tableEl = document.getElementById('age-table')
+    <script>
+      // 1. The table with `id="age-table"`.
+      let table = document.getElementById('age-table');
 
-       // 2. All label elements inside that table
-       let allLable = document.querySelectorAll('#age-table label')
-       //OR
-       table.getElementsByTagName('label')
+      // 2. All label elements inside that table
+      table.getElementsByTagName('label');
 
-       // 3. The first td in that table (with the word "Age")
-       table.rows[0].cells[0]
-       //OR
-       table.getElementsByTagName('td')[0]
-       //OR
-       table.querySelector('td')
-       let firtAgeTd = document.querySelector('td')
+      // 3. The first td in that table (with the word "Age")
+      console.log(table.getElementsByTagName('td')[0]);
 
-       // 4. The form with the name "search"
+      // 4. The form with the name "search"
       // assuming there's only one element with name="search" in the document
-       let getName = document.getElementsByName('search')[0]
-      //OR form specifically
-       document.querySelector('form[name="search"]')
+      let form = document.getElementsByName('search')[0];
 
-       // 5. The first input in that form.
-      form.getElementsByName('info[0]')
-               let getLastInput = document.getElementsByName('info[2]')
+      // 5. The first input in that form.
+      form.getElementsByTagName('input')[0];
+
+      // 6. The last input in that form
+      // let inputs = form.getElementsByTagName('input');
+      let inputs = form.querySelectorAll('input'); // find all inputs
+      console.log(inputs[inputs.length - 1]);
     </script>
   </body>
 </html>
