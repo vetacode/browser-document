@@ -64,22 +64,34 @@ Open the page table.html in a separate window and make use of browser tools for 
       let table = document.getElementById('age-table');
 
       // 2. All label elements inside that table
-      table.getElementsByTagName('label');
+      console.log(table.getElementsByTagName('label')); //returns HTMLCollections (live update)
+      console.log(table.querySelectorAll('label')); //returns NodeList (static)
 
       // 3. The first td in that table (with the word "Age")
       console.log(table.getElementsByTagName('td')[0]);
+      console.log(table.querySelector('td'));
+      console.log(table.querySelectorAll('td')[0]);
+      console.log(table.rows[0].cells[0]);
 
       // 4. The form with the name "search"
       // assuming there's only one element with name="search" in the document
       let form = document.getElementsByName('search')[0];
+      console.log(form); //it returns the first TAG <form>, NOT the name="search"
+      console.log(document.body.getElementsByTagName('form')[0]); //getElements* can NOT understands CSS selectors
+      console.log(document.body.querySelector('form[name="search"]')); //querySelectors understands CSS selectors
 
       // 5. The first input in that form.
-      form.getElementsByTagName('input')[0];
+      console.log(form.getElementsByTagName('input')[1]);
+      console.log(form.querySelectorAll('input')[1]);
+      console.log(form.querySelector('input'));
+      console.log(form[0]); //it means index 0 inside (first) TAG <form> ==> <input type="text" name="search"
+      console.log(document.getElementsByName('search')[0][0]);
+      console.log(form[0] === document.getElementsByName('search')[0][0]); //true
 
       // 6. The last input in that form
       // let inputs = form.getElementsByTagName('input');
       let inputs = form.querySelectorAll('input'); // find all inputs
-      console.log(inputs[inputs.length - 1]);
+      inputs[inputs.length - 1];
     </script>
   </body>
 </html>
