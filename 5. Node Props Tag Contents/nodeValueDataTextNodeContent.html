@@ -1,0 +1,29 @@
+<!-- 'nodeValue' and 'data' properties are almost same of innerHTML, but for TEXT nodes.
+kita pake 'data' saja krn lbh ringkas -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Hello
+    <!-- Comment -->
+    <script>
+      let text = document.body.firstChild;
+      alert(text.data); // Hello
+
+      let comment = text.nextSibling;
+      alert(comment.data); // Comment
+
+      alert(text.nodeName); // #text (yg keambil adalah SPACE antara <body> dan Hello, which is nodeName nya #text)
+      alert(text.nodeValue); // Hello (yg keambil adalah value/nilai dari firstChild <body> yaitu Hello. so, SPACE bukan termasuk value)
+
+      alert(comment.nodeName); //#comment
+      console.log(comment.nextSibling.nodeName); //#text
+      console.log(comment.nextSibling.nodeValue); // SPACE kosong (antara comment dan <script>) == #text (nodeName)
+    </script>
+  </body>
+</html>
