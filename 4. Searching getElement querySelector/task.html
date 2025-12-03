@@ -1,0 +1,96 @@
+<!-- Search for elements
+importance: 4
+Here’s the document with the table and form.
+
+How to find?…
+
+The table with id="age-table".
+All label elements inside that table (there should be 3 of them).
+The first td in that table (with the word “Age”).
+The form with name="search".
+The first input in that form.
+The last input in that form.
+Open the page table.html in a separate window and make use of browser tools for that. -->
+
+<html>
+  <head></head>
+  <body>
+    <form name="search">
+      <label
+        >Search the site:
+        <input type="text" name="search" />
+      </label>
+      <input type="submit" value="Search!" />
+    </form>
+
+    <hr />
+
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tbody>
+          <tr>
+            <td>Age:</td>
+            <td id="age-list">
+              <label>
+                <input type="radio" name="age" value="young" />less than
+                18</label
+              >
+              <label>
+                <input type="radio" name="age" value="mature" />18-50</label
+              >
+              <label>
+                <input type="radio" name="age" value="senior" />more than
+                50</label
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td>Additionally:</td>
+            <td>
+              <input type="text" name="info[0]" />
+              <input type="text" name="info[1]" />
+              <input type="text" name="info[2]" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="submit" value="Search!" />
+    </form>
+    <script
+      defer=""
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"version":"2024.11.0","token":"0cda2462c5944515bb0255634e18140a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+      crossorigin="anonymous"
+    >
+       // 1. The table with `id="age-table"`.
+       let tableEl = document.getElementById('age-table')
+
+       // 2. All label elements inside that table
+       let allLable = document.querySelectorAll('#age-table label')
+       //OR
+       table.getElementsByTagName('label')
+
+       // 3. The first td in that table (with the word "Age")
+       table.rows[0].cells[0]
+       //OR
+       table.getElementsByTagName('td')[0]
+       //OR
+       table.querySelector('td')
+       let firtAgeTd = document.querySelector('td')
+
+       // 4. The form with the name "search"
+      // assuming there's only one element with name="search" in the document
+       let getName = document.getElementsByName('search')[0]
+      //OR form specifically
+       document.querySelector('form[name="search"]')
+
+       // 5. The first input in that form.
+      form.getElementsByName('info[0]')
+               let getLastInput = document.getElementsByName('info[2]')
+    </script>
+  </body>
+</html>
