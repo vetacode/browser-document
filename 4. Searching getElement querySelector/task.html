@@ -91,7 +91,9 @@ Open the page table.html in a separate window and make use of browser tools for 
       // 6. The last input in that form
       // let inputs = form.getElementsByTagName('input');
       let inputs = form.querySelectorAll('input'); // find all inputs
-      inputs[inputs.length - 1];
+      console.log(inputs[inputs.length - 1]);
+      console.log(Array.from(form.getElementsByTagName('input')).at(-1));
+      console.log(form[1]); // its not dynamic, prone to errors if the data changes
     </script>
   </body>
 </html>
