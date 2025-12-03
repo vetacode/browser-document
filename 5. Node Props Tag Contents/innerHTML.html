@@ -10,8 +10,16 @@
     <div>A div</div>
 
     <script>
-      alert(document.body.innerHTML); // read the current contents
-      document.body.innerHTML = 'The new BODY!'; // replace it
+      let p = document.body.getElementsByTagName('p')[0]; //[object HTMLParagraphElement]
+      let div = document.querySelector('div'); //[object HTMLDivElement]
+
+      alert(p.innerHTML); // cek Referensi/isi dari p
+      alert((p.innerHTML = 'isi p (A paragraph) diganti')); // ganti isi p (merubah both referensi dan elemen di DOM)
+      alert(p.innerHTML); // cek lagi Referensi dari p setelah diganti ==> berubah juga
+
+      // alert(document.body.innerHTML); // read the current contents
+      // document.body.innerHTML = 'The new BODY!'; // replace it
+      // alert(document.body.innerHTML); // The new BODY! ==> elemen di DOM dan Referensi nya berubah
 
       chatDiv.innerHTML += "<div>Hello<img src='smile.gif'/> !</div>";
       chatDiv.innerHTML += 'How goes?';
