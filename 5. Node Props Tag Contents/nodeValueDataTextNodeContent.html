@@ -13,7 +13,7 @@ bisa pake 'data' aja krn lbh ringkas -->
     <!-- Comment -->
     <script>
       let text = document.body.firstChild;
-      alert(text.data); // Hello
+      alert(text.data); // Hello => sebetulnya ada data [whitespace] di depan nya. Alert bisa membuat whitespace terlihat seperti tidak ada, tapi sbetulnya nilai mentahnya tetap tersimpan penuh.
 
       let comment = text.nextSibling;
       alert(comment.data); // Comment
