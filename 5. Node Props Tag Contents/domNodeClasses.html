@@ -7,8 +7,19 @@
   </head>
   <body>
     <script>
+      let doc = document.body;
+      console.log(doc);
+      console.dir(doc);
+
       alert(document.body.constructor.name); //HTMLBodyElement
       alert(document.body); // [object HTMLBodyElement]
+
+      //Check inheritance with instanceof
+      alert(document.body instanceof HTMLBodyElement); // true
+      alert(document.body instanceof HTMLElement); // true
+      alert(document.body instanceof Element); // true
+      alert(document.body instanceof Node); // true
+      alert(document.body instanceof EventTarget); // true
     </script>
   </body>
 </html>
