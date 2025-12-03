@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>A paragraph</p>
+    <div>A div</div>
+
+    <script>
+      alert(document.body.innerHTML); // read the current contents
+      document.body.innerHTML = 'The new BODY!'; // replace it
+
+      chatDiv.innerHTML += "<div>Hello<img src='smile.gif'/> !</div>";
+      chatDiv.innerHTML += 'How goes?';
+    </script>
+  </body>
+</html>
+
+<!-- BEWARE: elem.innerHTML+="more html" does a full overwrite -->
