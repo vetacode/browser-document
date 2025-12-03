@@ -9,17 +9,25 @@
     <div>Hello, world!</div>
 
     <script>
-      let div = document.querySelector('div');
+      let div = document.querySelector('div'); // div adalah refereansi dari elemen <div>
 
       alert(div.outerHTML); //<div>Hello, world!</div>
 
       // replace div.outerHTML with <p>...</p>
       div.outerHTML = '<p>A new element</p>'; // (*)
 
-      // Wow! 'div' is still the same!
+      // Wow! 'div' is still the same! Ternyata Ga berubah!
       alert(div.outerHTML); // <div>Hello, world!</div> (**)
+      console.log(div.outerHTML);
     </script>
   </body>
 </html>
 
 <!-- NOTES: We can write to elem.outerHTML, but should keep in mind that it doesn’t change the element we’re writing to (‘elem’). It puts the new HTML in its place instead. We can get references to the new elements by querying the DOM. -->
+
+<!-- WHY? Apa yang terjadi?
+2. Ini karena JS tidak otomatis mengubah referensi variabel 
+1. outerHTML cuma Menggantikan Node di DOM, BUKAN Memperbarui Variabel => tdk mengganti referensi div, cuma mengganti elemen <div> di dom
+3. di browser, elemen <div> terlihat berubah, tapi referensi div masih tetap sama menunjuk pada object lama (cek
+alert/console) => ini disebut Detached Mode
+4. Beda dengan innerHTML, dimana yang dirubah adalah isi di dalam elemen (referensi nya) -->
