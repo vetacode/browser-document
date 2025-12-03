@@ -19,6 +19,7 @@ kita pake 'data' saja krn lbh ringkas -->
       alert(comment.data); // Comment
 
       alert(text.nodeName); // #text (yg keambil adalah SPACE antara <body> dan Hello, which is nodeName nya #text)
+      console.log(text.nextSibling.nodeName); //#comment
       alert(text.nodeValue); // Hello (yg keambil adalah value/nilai dari firstChild <body> yaitu 'SPACE kosong' dan text Hello. so, SPACE juga termasuk value)
 
       alert(comment.nodeName); //#comment
