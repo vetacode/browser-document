@@ -1,0 +1,27 @@
+<!-- Attributes methods:
+
+elem.hasAttribute(name) – checks for existence.
+elem.getAttribute(name) – gets the value.
+elem.setAttribute(name, value) – sets the value.
+elem.removeAttribute(name) – removes the attribute. -->
+
+<!-- HTML attributes features:
+1. Their name is case-insensitive (id is same as ID).
+2. Their values are always strings. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="test" something="non-standard">
+    <script>
+      console.log(document.body.id); // test
+      // non-standard attribute does not yield a property
+      console.log(document.body.something); // undefined
+      console.log(document.body.getAttribute('something')); // non-standard
+    </script>
+  </body>
+</html>
