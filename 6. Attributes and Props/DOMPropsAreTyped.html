@@ -1,0 +1,18 @@
+<!-- DOM properties are not always strings. For instance, the input.checked property (for checkboxes) is a boolean -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input" type="checkbox" checked /> checkbox
+
+    <script>
+      console.log(input.getAttribute('checked')); // the attribute value is: empty string
+      console.log(input.checked); // the property value is: true
+    </script>
+  </body>
+</html>
