@@ -2,7 +2,7 @@
 
 What’s its place in the DOM hierarchy? child of HTMLElement
 
-Does it inherit from Node or Element, or maybe HTMLElement? inherit from Obj -> EventTarget -> Node -> Document -> HTMLDocument -->
+Does it inherit from Node or Element, or maybe HTMLElement? inherit from Obj -> EventTarget -> Node -> Document -> HTMLDocument -> document -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@ Does it inherit from Node or Element, or maybe HTMLElement? inherit from Obj -> 
   </head>
   <body>
     <script>
+      console.dir(document);
       console.log(document); //#document (node name) ==> showing the structure of the HTMLDocument
       console.log(document.constructor); //f HTMLDocument
       console.log(document.constructor.name); //HTMLDocument is a function constructor of document
