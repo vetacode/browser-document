@@ -1,0 +1,41 @@
+<!-- Which class does the document belong to? HTMLDocument
+
+What’s its place in the DOM hierarchy? child of HTMLElement
+
+Does it inherit from Node or Element, or maybe HTMLElement? inherit from Obj -> EventTarget -> Node -> Document -> HTMLDocument -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(document); //#document (node name) ==> showing the structure of the HTMLDocument
+      console.log(document.constructor); //f HTMLDocument
+      console.log(document.constructor.name); //HTMLDocument is a function constructor of document
+      // let document = new HTMLDocument(); //ßerror: document has already been declared
+      // console.log(document);
+
+      console.log(HTMLDocument.prototype.constructor === HTMLDocument); //true
+
+      //The Hierarchy:
+      console.log(HTMLDocument.prototype.constructor.name); //HTMLDocument
+      console.log(HTMLDocument.prototype.__proto__.constructor.name); //Document
+      console.log(HTMLDocument.prototype.__proto__.__proto__.constructor.name); //Node
+      console.log(
+        HTMLDocument.prototype.__proto__.__proto__.__proto__.constructor.name
+      ); //EventTarget
+      console.log(
+        HTMLDocument.prototype.__proto__.__proto__.__proto__.__proto__
+          .constructor.name
+      ); //Object
+      console.log(
+        HTMLDocument.prototype.__proto__.__proto__.__proto__.__proto__.__proto__
+          .constructor.name
+      ); //TypeError reading props of null at last the __proto__
+    </script>
+  </body>
+</html>
