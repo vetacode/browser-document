@@ -1,0 +1,24 @@
+<!-- additional props of DOM elements (in particular those that depend on the class):
+
+value – the value for <input>, <select> and <textarea> (HTMLInputElement, HTMLSelectElement…).
+href – the “href” for <a href="..."> (HTMLAnchorElement).
+id – the value of “id” attribute, for all elements (HTMLElement).
+..and more -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="elem" value="value" />
+
+    <script>
+      alert(elem.type); // "text"
+      alert(elem.id); // "elem"
+      alert(elem.value); // value
+    </script>
+  </body>
+</html>
