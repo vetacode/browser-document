@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let body = document.body;
+
+      body.innerHTML = '<!--' + body.tagName + '-->';
+
+      alert(body.firstChild.data); // BODY (the data prop is the content inside the comment ==> BODY)
+    </script>
+  </body>
+</html>
