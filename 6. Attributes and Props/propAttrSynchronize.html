@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input />
+    <script>
+      let input = document.querySelector('input');
+
+      //attribute to prop
+      input.setAttribute('id', 'one');
+      console.log(input.outerHTML); // <input id="one"> : id attribute
+      console.log(input.id); //one : id prop
+
+      //prop to attribute
+      input.id = 'newID';
+      console.log(input.getAttribute('id')); //newID : id prop
+      console.log(input.outerHTML); // <input id="newID"> : id attribute
+    </script>
+  </body>
+</html>
