@@ -11,8 +11,18 @@
     <input id="input" type="checkbox" checked /> checkbox
 
     <script>
-      console.log(input.getAttribute('checked')); // the attribute value is: empty string
-      console.log(input.checked); // the property value is: true
+      console.dir(input); //input#input
+      //coz assignment ID ke "input", otomatis jd global var: window.input = document.getElementById("input"); shg input auto declared (ga error)
+
+      console.log(input.getAttribute('checked')); // the attribute value is: empty string (blank)
+      console.log(`this is input.checked: ${input.checked}`); // the property value is: true
+
+      console.log(input.id); //input
+      console.log(input.input); //undefind
+      console.log(input.type); //checbox
+      console.log(input.checkbox); //undefined
+      console.log(typeof input); //object
+      input.checked = false;
     </script>
   </body>
 </html>
