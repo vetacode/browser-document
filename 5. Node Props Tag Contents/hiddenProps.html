@@ -1,0 +1,23 @@
+<!-- using "hidden" HTML's attribute will makes DOM props assign element invisible-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Both divs below are hidden</div>
+
+    <div hidden>With the attribute "hidden"</div>
+
+    <div id="elem">JavaScript assigned the property "hidden"</div>
+
+    <script>
+      //elem is become global variable coz of attribute id="elem" assignment
+      elem.hidden = true;
+      alert(elem); // [object HTMLDivElement]
+    </script>
+  </body>
+</html>
