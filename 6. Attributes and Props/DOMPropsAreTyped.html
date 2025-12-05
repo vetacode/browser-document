@@ -14,6 +14,10 @@
 
     <div id="div" style="color: red; font-size: 120%">Hello Div</div>
 
+    <!-- //-------------------------------// -->
+
+    <a id="a" href="#hello">link</a>
+
     <script>
       console.log(input);
       console.dir(input); //input#input
@@ -36,6 +40,14 @@
       console.log(div.div);
       console.log(div.getAttribute('style'));
       console.log(div.style);
+
+      //-------------------------------// -->
+
+      //get attribute
+      console.log(a.getAttribute('href')); //#hello
+
+      //get property
+      console.log(a.href); //full url of #hello
     </script>
   </body>
 </html>
