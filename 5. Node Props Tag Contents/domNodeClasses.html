@@ -23,3 +23,49 @@
     </script>
   </body>
 </html>
+
+<!-- 
+                    ┌───────────────────────────────────────┐
+                    │            DOM NODE TREE               │
+                    └───────────────────────────────────────┘
+
+                                       null
+                                         │
+                                         ▼
+                                      Object
+                                         │
+                                         ▼
+                                    EventTarget
+                                         │
+                                         ▼
+                                        Node
+                         ┌───────────────┬───────────────────┐
+                         │               │                   │
+                         ▼               ▼                   ▼
+                      Element      CharacterData         Document
+                         │         ┌──────────────┐         │
+                         ▼         │              │         ▼
+                    HTMLElement   Text        Comment   HTMLDocument
+                        │
+           ┌────────────┼─────────────┬─────────────┐
+           ▼            ▼             ▼             ▼
+ HTMLDivElement  HTMLBodyElement  HTMLInputElement  HTMLAnchorElement
+     <div>          <body>          <input>              <a>
+
+
+                    ┌───────────────────────────────────────┐
+                    │          COLLECTION OBJECTS            │
+                    │   (BUKAN BAGIAN DARI NODE TREE)       │
+                    └───────────────────────────────────────┘
+
+                              Object
+                    ┌───────────┼────────────┬──────────────┐
+                    ▼           ▼            ▼               ▼
+             HTMLCollection   NodeList   DOMTokenList   NamedNodeMap
+          (element list)   (static list)   (classList)   (attributes)
+
+Contoh:
+- document.getElementsByTagName() → HTMLCollection
+- element.children → HTMLCollection
+- document.querySelectorAll() → NodeList
+- element.classList → DOMTokenList -->
