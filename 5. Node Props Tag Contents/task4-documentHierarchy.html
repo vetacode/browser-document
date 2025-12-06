@@ -13,12 +13,11 @@ Does it inherit from Node or Element, or maybe HTMLElement? inherit from null ->
   </head>
   <body>
     <script>
-      console.dir(document);
       console.log(document); //#document (node name) ==> showing the structure of the HTMLDocument
       console.log(document.constructor); //f HTMLDocument
       console.log(document.constructor.name); //HTMLDocument is a function constructor of document
-      // let document = new HTMLDocument(); //error: document has already been declared. document adl obj global yg sdh disediakan oleh browser
-      console.log(document instanceof HTMLDocument); //true
+      // let document = new HTMLDocument(); //ßerror: document has already been declared
+      // console.log(document);
 
       console.log(HTMLDocument.prototype.constructor === HTMLDocument); //true
 
