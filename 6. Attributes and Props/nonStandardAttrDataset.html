@@ -1,0 +1,28 @@
+<!-- it is used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- mark the div to show "name" here -->
+    <div show-info="name"></div>
+    <!-- and age here -->
+    <div show-info="age"></div>
+    <script>
+      let user = {
+        name: 'Sui',
+        age: 100,
+      };
+
+      for (let divTag of document.querySelector('[show-info]')) {
+        //masukin info ke variable
+
+        let;
+      }
+    </script>
+  </body>
+</html>
