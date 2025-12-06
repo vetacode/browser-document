@@ -1,0 +1,32 @@
+<!-- createTextNode vs innerHTML vs textContent
+importance: 5
+We have an empty DOM element elem and a string text.
+
+Which of these 3 commands will do exactly the same?
+
+elem.append(document.createTextNode(text))
+elem.innerHTML = text
+elem.textContent = text
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="elem1"></div>
+    <div id="elem2"></div>
+    <div id="elem3"></div>
+    <script>
+      let text = '<b>text</b>';
+
+      elem1.append(document.createTextNode(text)); //<b>text</b>
+      elem2.innerHTML = text; // text (bold)
+      elem3.textContent = text; // <b>text</b>
+    </script>
+  </body>
+</html>
