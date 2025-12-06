@@ -1,0 +1,19 @@
+<!-- Get the attribute
+importance: 5
+Write the code to select the element with data-widget-name attribute from the document and to read its value. -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <div data-widget-name="menu">Choose the genre</div>
+
+    <script>
+      /* your code */
+      let attr = document.querySelector('[data-widget-name]');
+
+      console.log(attr.dataset.widgetName);
+      //OR
+      console.log(attr.getAttribute('data-widget-name'));
+    </script>
+  </body>
+</html>
