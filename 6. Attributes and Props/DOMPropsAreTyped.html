@@ -8,46 +8,50 @@
     <title>Document</title>
   </head>
   <body>
-    <input id="input" type="checkbox" checked /> checkbox
+    <input id="inputID" type="checkbox" checked /> checkbox
 
     <!-- //-------------------------------// -->
 
-    <div id="div" style="color: red; font-size: 120%">Hello Div</div>
+    <div id="division" style="color: red; font-size: 120%">Hello Div</div>
 
     <!-- //-------------------------------// -->
 
-    <a id="a" href="#hello">link</a>
+    <a id="anchor" href="#hello">link</a>
 
     <script>
-      console.log(input);
-      console.dir(input); //input#input
-      //coz assignment ID ke "input", otomatis jd global var: window.input = document.getElementById("input"); shg input auto declared (ga error)
+      console.log(inputID); //input#inputID or <input id="inputID" type="checkbox" checked="">
+      console.dir(inputID); //inputID#inputID
+      //coz assignment ID ke "inputID", otomatis jd global var: window.inputID = document.getElementById("inputID"); shg inputID auto declared (ga error)
 
-      console.log(input.getAttribute('checked')); // the attribute value is: empty string (blank)
-      console.log(`this is input.checked: ${input.checked}`); // the property value is: true
+      console.log(inputID.getAttribute('checked')); // the attribute value is: empty string (blank)
+      console.log(`this is inputID.checked: ${inputID.checked}`); // the property value is: true
 
-      console.log(input.id); //input
-      console.log(input.input); //undefind
-      console.log(input.type); //checbox
-      console.log(input.checkbox); //undefined
-      console.log(typeof input); //object
-      input.checked = false;
+      console.log(inputID.id); //inputID
+      console.log(inputID.inputID); //undefind
+      console.log(inputID.type); //checbox
+      console.log(inputID.checkbox); //undefined
+      console.log(typeof inputID); //object
+      inputID.checked = false;
 
       //-------------------------------------------------//
 
-      console.log(div);
-      console.dir(div);
-      console.log(div.div);
-      console.log(div.getAttribute('style'));
-      console.log(div.style);
+      console.log(division);
+      console.dir(division);
+      console.log(division.division);
+      console.log(division.getAttribute('style'));
+      console.log(division.style);
 
       //-------------------------------// -->
 
       //get attribute
-      console.log(a.getAttribute('href')); //#hello
+      console.log(anchor.getAttribute('href')); //#hello
 
       //get property
-      console.log(a.href); //full url of #hello
+      console.log(anchor.href); //full url of #hello
+
+      //----------EXERCISES-----------// -->
+      console.log(anchor.textContent);
+      console.log(division.textContent);
     </script>
   </body>
 </html>
