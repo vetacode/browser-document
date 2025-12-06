@@ -31,7 +31,7 @@ Example:
     <title>Document</title>
   </head>
   <body>
-    <a name="list">the list</a>
+    <a name="list">The list</a>
     <ul>
       <li><a href="http://google.com">http://google.com</a></li>
       <li><a href="/tutorial">/tutorial.html</a></li>
@@ -42,12 +42,30 @@ Example:
     </ul>
 
     <script>
-      document.querySelectorAll('a[href]').forEach((a) => {
-        const href = a.getAttribute('href');
-        if (href.includes('://') && !href.startsWith('http://internal.com')) {
-          return (a.style.color = 'orange');
-        }
-      });
+      //CARA 1
+      // document.querySelectorAll('a[href]').forEach((a) => {
+      //   const href = a.getAttribute('href');
+      //   if (href.includes('://') && !href.startsWith('http://internal.com')) {
+      //     return (a.style.color = 'orange');
+      //   }
+      // });
+
+      //CARA 2
+      // let links = document.querySelectorAll('a');
+
+      // for (let link of links) {
+      //   let href = link.getAttribute('href');
+      //   if (!href) continue;
+      //   if (!href.includes('://')) continue;
+      //   if (href.startsWith('http://internal.com')) continue;
+
+      //   link.style.color = 'orange';
+      // }
+
+      //CARA 3
+      let selector = 'a[href*="://"]:not([href^="http://internal.com"])';
+      let links = document.querySelectorAll(selector);
+      links.forEach((a) => (a.style.color = 'orange'));
     </script>
   </body>
 </html>
