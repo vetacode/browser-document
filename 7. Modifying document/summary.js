@@ -14,7 +14,7 @@ node.before(...nodes or strings) –- insert right before node,
 node.after(...nodes or strings) –- insert right after node,
 node.replaceWith(...nodes or strings) –- replace node.
 node.remove() –- remove the node.
-Text strings are inserted “as text”.
+**Text strings are inserted “as text”.
 
 * “old school” methods:
 

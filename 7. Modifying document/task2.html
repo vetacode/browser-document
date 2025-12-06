@@ -1,0 +1,53 @@
+<!-- Clear the element
+importance: 5
+Create a function clear(elem) that removes everything from the element.
+
+<ol id="elem">
+  <li>Hello</li>
+  <li>World</li>
+</ol>
+
+<script>
+  function clear(elem) { /* your code */ }
+
+  clear(elem); // clears the list
+</script> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="elem">
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+
+    <script>
+      //Menghapus isi element ol: <ol id="elem">(isi dihapus)</ol>
+      //Reparse HTML, lebih lambat/berat (performa sedang)
+      function clear(elem) {
+        elem.innerHTML = '';
+      }
+
+      //Menghapus isi element ol: <ol id="elem">(isi dihapus)</ol>
+      //TIDAK Reparse HTML, lebih efisien
+      function clear(elem) {
+        while (elem.firstChild) {
+          elem.firstChild.remove();
+        }
+      }
+
+      //Menghapus semua element <ol id="elem">...</ol>
+      //Performa paling cepat
+      function clear(elem) {
+        elem.remove();
+      }
+
+      clear(elem); // clears the list
+    </script>
+  </body>
+</html>
