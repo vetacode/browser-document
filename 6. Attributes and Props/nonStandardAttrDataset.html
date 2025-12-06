@@ -18,11 +18,18 @@
         age: 100,
       };
 
-      for (let divTag of document.querySelector('[show-info]')) {
+      for (let divTag of document.querySelectorAll('[show-info]')) {
         //masukin info ke variable
 
-        let;
+        let field = divTag.getAttribute('show-info');
+        divTag.innerHTML = user[field];
       }
     </script>
   </body>
 </html>
+
+<!-- notes: bracket notation mengizinkan kita mengisi nama key secara dinamis
+(sebagai string atau variable). 
+
+user[field] = ambil value dari object user
+menggunakan key yang disimpan di variable field. -->
