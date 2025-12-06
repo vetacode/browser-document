@@ -2,6 +2,9 @@
  1. pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.
  2. style an element. -->
 
+<!-- NOTES: data-* attribute is reserved for attributes and available in the dataset props
+- if an elem has an attribute named "data-about", it’s available as elem.dataset.about. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,14 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body data-about="Tiger">
     <!-- mark the div to show "name" here -->
     <div show-info="name"></div>
     <!-- and age here -->
     <div show-info="age"></div>
 
-    <!---------------------part--------------------->
-
+    <!---------------------part1--------------------->
     <style>
       .order[order-state='new'] {
         color: green;
@@ -33,7 +35,27 @@
     <div class="order" order-state="pending">A pending order</div>
     <div class="order" order-state="canceled">A cancel order</div>
 
+    <!---------------------part2--------------------->
+
+    <style>
+      .order[data-order-state='new'] {
+        color: yellow;
+      }
+      .order[data-order-state='pending'] {
+        color: orange;
+      }
+      .order[data-order-state='canceled'] {
+        color: pink;
+      }
+    </style>
+
+    <div id="order" class="order" data-order-state="new">Order Baru</div>
+
     <script>
+      console.log(document.body.dataset.about); //Tiger
+
+      // <!---------------------part1--------------------->
+
       let user = {
         name: 'Sui',
         age: 100,
@@ -45,6 +67,14 @@
         let field = divTag.getAttribute('show-info');
         divTag.innerHTML = user[field];
       }
+
+      //  <!---------------------part2--------------------->
+
+      console.log(order.dataset.orderState); //new
+      //  <!-- Multiword attributes like data-order-state become camel-cased: dataset.orderState. -->
+
+      // order.dataset.orderState = 'pending';
+      // order.dataset.orderState = 'canceled';
     </script>
   </body>
 </html>
