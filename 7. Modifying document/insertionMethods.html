@@ -69,6 +69,9 @@ node.replaceWith(...nodes or strings) –- replaces node with the given nodes or
 
       //Problem:
       // the text is inserted “as text”, not “as HTML”. jadi text Hello muncul setelah div (bukan sebelum div), padahal sdh pakai method "div.before"
+      // Karena browser memindahkan text node yang bentuknya seperti HTML markup ke setelah elemen block-level sebelumnya untuk mencegah parsing invalid pada fase awal rendering.
+      // Ini disebut HTML reparenting / reparsing behavior, terutama ketika HTML + JS dieksekusi sebelum dokumen selesai dibangun.
+
       //SOLUSI: pakai elem.insertAdjacentHTML
     </script>
   </body>
