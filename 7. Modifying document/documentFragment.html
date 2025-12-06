@@ -1,4 +1,6 @@
-<!-- documentFragment is a wrapper to pass around lists of nodes -->
+<!-- documentFragment is a wrapper to pass around lists of nodes
+DocumentFragment mainly used to apply some concepts on top of it, like template element 
+-->
 
 <!-- syntax:  let fragment = new DocumentFragment(); -->
 
@@ -26,6 +28,9 @@
       }
 
       ul.append(getListContent()); // (*)
+
+      // ------------------------------------------- //
+
       let fragment = new DocumentFragment();
       console.dir(fragment.__proto__);
     </script>
