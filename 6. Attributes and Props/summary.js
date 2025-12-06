@@ -11,7 +11,7 @@ Name	| Name is case-sensitive                              	              | Name
 Methods to work with attributes are:
 
 elem.hasAttribute(name) – to check for existence.
-elem.getAttribute(name) – to get the value.
+elem.getAttribute(name) – to get the value. //OR// elem.[attr_name]
 elem.setAttribute(name, value) – to set the value.
 elem.removeAttribute(name) – to remove the attribute.
 elem.attributes is a collection of all attributes.
