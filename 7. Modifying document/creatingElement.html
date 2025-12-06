@@ -1,0 +1,22 @@
+<!-- Creating DOM nodes:
+1. document.createElement(tag); 
+2. document.createTextNode(text); -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let div = document.createElement('div');
+
+      div.className = 'alert';
+
+      div.innerHTML =
+        '<strong>Hello everyone! </strong> You have read this message.';
+    </script>
+  </body>
+</html>
