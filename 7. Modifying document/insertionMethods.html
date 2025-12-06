@@ -1,4 +1,4 @@
-<!-- syntax: document.body.append(div); -->
+<!-- common syntax: document.body.append(div); ==> adding at the end of node -->
 
 <!-- Other insertion methods:
 
@@ -25,6 +25,15 @@ node.replaceWith(...nodes or strings) –- replaces node with the given nodes or
         background-color: #dff0d8;
       }
     </style>
+
+    <!---------------------PART1------------------->
+
+    <ol id="ol">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ol>
+
     <script>
       let div = document.createElement('div');
       div.className = 'alert';
@@ -32,6 +41,21 @@ node.replaceWith(...nodes or strings) –- replaces node with the given nodes or
         '<strong>Hello everyone! </strong> You have read this message.';
 
       document.body.append(div);
+
+      //  <!---------------------PART1------------------->
+      //adding string
+      ol.before('before');
+      ol.after('after');
+
+      //adding new node before the node
+      let liFirst = document.createElement('li');
+      liFirst.innerHTML = 'prepend';
+      ol.prepend(liFirst);
+
+      //adding new node after the node
+      let liLast = document.createElement('li');
+      liLast.innerHTML = 'append';
+      ol.append(liLast);
     </script>
   </body>
 </html>
