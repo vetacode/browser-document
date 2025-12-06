@@ -1,4 +1,6 @@
-<!-- it is used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript. -->
+<!-- it is used to:
+ 1. pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.
+ 2. style an element. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +14,25 @@
     <div show-info="name"></div>
     <!-- and age here -->
     <div show-info="age"></div>
+
+    <!---------------------part--------------------->
+
+    <style>
+      .order[order-state='new'] {
+        color: green;
+      }
+      .order[order-state='pending'] {
+        color: blue;
+      }
+      .order[order-state='canceled'] {
+        color: red;
+      }
+    </style>
+
+    <div class="order" order-state="new">A new order</div>
+    <div class="order" order-state="pending">A pending order</div>
+    <div class="order" order-state="canceled">A cancel order</div>
+
     <script>
       let user = {
         name: 'Sui',
