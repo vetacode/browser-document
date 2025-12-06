@@ -8,6 +8,8 @@ node.before(...nodes or strings) –- insert nodes or strings before node,
 node.after(...nodes or strings) –- insert nodes or strings after node,
 node.replaceWith(...nodes or strings) –- replaces node with the given nodes or strings. -->
 
+<!-- NOTES: these methods can only be used to insert DOM nodes or text pieces. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,6 +36,10 @@ node.replaceWith(...nodes or strings) –- replaces node with the given nodes or
       <li>2</li>
     </ol>
 
+    <!---------------------PART2------------------->
+
+    <div id="div">DIV DISINI</div>
+
     <script>
       let div = document.createElement('div');
       div.className = 'alert';
@@ -56,6 +62,14 @@ node.replaceWith(...nodes or strings) –- replaces node with the given nodes or
       let liLast = document.createElement('li');
       liLast.innerHTML = 'append';
       ol.append(liLast);
+
+      //  <!---------------------PART2------------------->
+
+      div.before('<p>Hello</p>', document.createElement('hr'));
+
+      //Problem:
+      // the text is inserted “as text”, not “as HTML”. jadi text Hello muncul setelah div (bukan sebelum div), padahal sdh pakai method "div.before"
+      //SOLUSI: pakai elem.insertAdjacentHTML
     </script>
   </body>
 </html>
