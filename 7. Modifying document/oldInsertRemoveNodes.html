@@ -1,0 +1,42 @@
+<!-- Syntax:
+
+parentElem.appendChild(node) : Appends node as the last child of parentElem. 
+parentElem.insertBefore(node, nextSibling) : Inserts node before nextSibling into parentElem.
+list.insertBefore(newLi, list.firstChild); To insert newLi as the first element
+parentElem.replaceChild(node, oldChild) : Replaces oldChild with node among children of parentElem.
+parentElem.removeChild(node) : Removes node from parentElem (assuming node is its child). (It returns node. But returned value is not used, just run the method)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="list">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ol>
+
+    <script>
+      // let newLi = document.createElement('li');
+      // newLi.innerHTML = 'Hello, world!';
+      // list.appendChild(newLi);
+
+      //----------------------------------------//
+
+      // let newLi = document.createElement('li');
+      // newLi.innerHTML = 'Hello, world!';
+      // list.insertBefore(newLi, list.children[1]);
+
+      //----------------------------------------//
+
+      let li = list.firstElementChild;
+      list.removeChild(li);
+    </script>
+  </body>
+</html>
