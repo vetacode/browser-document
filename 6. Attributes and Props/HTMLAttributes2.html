@@ -1,5 +1,7 @@
 <!-- NOTES:
 
+elem/[ID_value].setAttribute('attr_name', 'attr_value')
+
 1. getAttribute('About') – the first letter is uppercase here, and in HTML it’s all lowercase. But that doesn’t matter: attribute names are case-insensitive.
 2. We can assign anything to an attribute, but it becomes a string. So here we have "123" as the value.
 3. All attributes including ones that we set are visible in outerHTML.
@@ -16,7 +18,7 @@
     <div id="elem" about="Elephant"></div>
 
     <script>
-      console.log(elem.getAttribute('About')); // (1) 'Elephant', reading
+      console.log(elem.getAttribute('About')); // (1) 'Elephant'
 
       elem.setAttribute('Test', 123); // (2), writing
 
