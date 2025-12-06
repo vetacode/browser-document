@@ -1,0 +1,30 @@
+<!-- syntax: elem.insertAdjacentHTML(where, html). -->
+<!--
+Params:
+1. where?
+"beforebegin" – insert html immediately before elem,
+"afterbegin" – insert html into elem, at the beginning,
+"beforeend" – insert html into elem, at the end,
+"afterend" – insert html immediately after elem. 
+
+2. html?
+is an HTML string that is inserteed "as HTML"
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div">DIV DISINI</div>
+    <script>
+      div.insertAdjacentHTML('beforebegin', '<p>Hello</p>'); //posisi diluar sebelum div DIV DISINI
+      div.insertAdjacentHTML('afterbegin', '<p>After Begin</p>'); //posisi didalam div sebelum DIV DISINI
+      div.insertAdjacentHTML('beforeend', '<p>Before End</p>'); //posisi didalam div setelah DIV DISINI
+      div.insertAdjacentHTML('afterend', '<p>Bye</p>'); //posisi diluar setelah div DIV DISINI
+    </script>
+  </body>
+</html>
