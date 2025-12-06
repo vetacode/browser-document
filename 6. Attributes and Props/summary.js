@@ -2,10 +2,10 @@
 Attributes – is what’s written in HTML.
 Properties – is what’s in DOM objects.
 
-
+-----------------------------------------------------------------------------------------------
       | Properties	                                                        | Attributes
 -----------------------------------------------------------------------------------------------
-Type	| Any value, standard properties have types described in the spec	    | A string
+Type	| Any value, standard properties have types described in the spec	        | A string
 Name	| Name is case-sensitive                              	              | Name is not case-sensitive
 
 Methods to work with attributes are:
