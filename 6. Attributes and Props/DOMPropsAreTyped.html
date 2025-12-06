@@ -19,7 +19,9 @@
     <a id="anchor" href="#hello">link</a>
 
     <script>
-      console.log(inputID); //input#inputID or <input id="inputID" type="checkbox" checked="">
+      console.log(inputID); //input#inputID or <input id="inputID" type="checkbox" checked> => logs returns object DOM dlm interactive preview format
+      console.log(document.getElementsByTagName('input')[0].outerHTML); //<input id="inputID" type="checkbox" checked=""> => logs returns string MURNI hasil serialisasi (hasil selalu konsisten)
+      console.log(document.querySelector('input').outerHTML); //<input id="inputID" type="checkbox" checked="">
       console.dir(inputID); //inputID#inputID
       //coz assignment ID ke "inputID", otomatis jd global var: window.inputID = document.getElementById("inputID"); shg inputID auto declared (ga error)
 
