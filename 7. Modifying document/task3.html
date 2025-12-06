@@ -1,0 +1,45 @@
+<!-- Why does "aaa" remain?
+importance: 1
+In the example below, the call table.remove() removes the table from the document.
+
+But if you run it, you can see that the text "aaa" is still visible.
+
+Why does that happen?
+
+<table id="table">
+  aaa
+  <tr>
+    <td>Test</td>
+  </tr>
+</table>
+
+<script>
+  alert(table); // the table, as it should be
+
+  table.remove();
+  // why there's still "aaa" in the document?
+</script> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      aaa
+      <tr>
+        <td>Test Table</td>
+      </tr>
+    </table>
+
+    <script>
+      console.dir(table); // the table, as it should be
+
+      // table.remove();
+      // why there's still "aaa" in the document? coz that is incorrect HTML code: there should not any strings before node elemet table
+    </script>
+  </body>
+</html>
