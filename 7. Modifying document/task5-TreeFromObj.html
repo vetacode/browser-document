@@ -37,6 +37,8 @@ P.S. The tree should not have “extra” elements like empty <ul></ul> for the 
 
 -->
 
+<!-- #2. Append tree nodes to the DOM -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,14 +47,54 @@ P.S. The tree should not have “extra” elements like empty <ul></ul> for the 
     <title>Document</title>
   </head>
   <body>
-    <div id="container">
-      <ul id="unordered">
-        <li>Fish<li>trout</li></li>
-        <li>Tree</li>
-      </ul>
-    </div>
+    <div id="container"></div>
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+        tree: {
+          Huge: {
+            sequoia: {},
+            salmon: {},
+          },
+          Flowering: {
+            'apple tree': {},
+            magnolia: {},
+          },
+        },
+      };
+
+      let container = document.getElementById('container');
+
+      function createTree(container, obj) {
+        container.append(createTreeDOM(obj));
+      }
+
+      function createTreeDOM(obj) {
+        if (!Object.keys(obj).length) return;
+        let ul = document.createElement('ul');
+        for (let key in obj) {
+          let li = document.createElement('li');
+          li.innerHTML = key;
+
+          let childrenUl = createTreeDOM(obj[key]);
+          if (childrenUl) {
+            li.append(childrenUl);
+          }
+
+          ul.append(li);
+        }
+        return ul;
+      }
+
+      createTree(container, data);
+    </script>
   </body>
 </html>
+
+<!-- #1. Use container.innerHTML -->
 
 <!-- <!DOCTYPE html>
 <html lang="en">
