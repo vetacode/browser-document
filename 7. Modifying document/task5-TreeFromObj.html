@@ -45,6 +45,23 @@ P.S. The tree should not have “extra” elements like empty <ul></ul> for the 
     <title>Document</title>
   </head>
   <body>
+    <div id="container">
+      <ul id="unordered">
+        <li>Fish<li>trout</li></li>
+        <li>Tree</li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
     <div id="container"></div>
     <script>
       let data = {
@@ -67,12 +84,9 @@ P.S. The tree should not have “extra” elements like empty <ul></ul> for the 
 
       let container = document.getElementById('container');
 
-      function createTree(container, obj) {
-        container.innerHTML = createTreeText(obj);
-      }
       function createTreeText(obj) {
-        let li = '';
         let ul;
+        let li = '';
         for (let key in obj) {
           li += '<li>' + key + createTreeText(obj[key]) + '</li>';
         }
@@ -82,7 +96,11 @@ P.S. The tree should not have “extra” elements like empty <ul></ul> for the 
         return ul || '';
       }
 
-      createTree(container, data); // creates the tree in the container
+      function createTree(container, obj) {
+        container.innerHTML = createTreeText(obj);
+      }
+
+      createTree(container, data);
     </script>
   </body>
-</html>
+</html> -->

@@ -28,5 +28,6 @@
 </html>
 
 <!-- BEWARE: elem.innerHTML+="more html" does a full overwrite -->
+<!-- BEWARE: element.innerHTML = userInput; XSS RISK from hackers(use element.textContent = userInput; instead)-->
 
 <!-- NOTES: innnerHTML props is only valid for element node, NOT for other types node like text nodes -->
