@@ -61,7 +61,8 @@ Write the code that adds to each <li> the number of its descendants. Skip leaves
       for (let li of lists) {
         let descendantsCount = li.querySelectorAll('li').length;
         if (!descendantsCount) continue;
-        console.log(li.firstChild);
+        console.log(li.firstChild); //textNode
+        console.log(li.firstElementChild); //ul
         li.firstChild.data += `[${descendantsCount}]`;
       }
 
