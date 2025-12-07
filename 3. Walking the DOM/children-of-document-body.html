@@ -7,16 +7,15 @@
   </head>
   <body>
     <div>Begin</div>
-
     <ul>
       <li>Information</li>
     </ul>
-
     <div>End</div>
-
     <script>
       let elem = document.body;
       console.log(elem.childNodes[0] === elem.firstChild); //true
+      console.log(elem.childNodes);
+      console.log(elem.firstChild); // #text (empty space between body and <div>Begin)
       console.log(elem.childNodes.length); //8
       console.log(elem.lastChild); // <script>
       console.log(

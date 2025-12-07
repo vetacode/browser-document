@@ -19,3 +19,5 @@ There are two main sets of them:
 For all nodes: parentNode, childNodes, firstChild, lastChild, previousSibling, nextSibling.
 For element nodes only: parentElement, children, firstElementChild, lastElementChild, previousElementSibling, nextElementSibling.
  */
+
+// NOTES: elem.firstChild => mengambil node pertama setelah elem, namun bukan selalu dalam bentuk element. Bisa text node, spasi, line baru, indentasi
