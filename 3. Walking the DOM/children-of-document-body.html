@@ -1,4 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
   <body>
     <div>Begin</div>
 
@@ -9,10 +15,16 @@
     <div>End</div>
 
     <script>
-      elem.childNodes[0] === elem.firstChild;
-      elem.childNodes[elem.childNodes.length - 1] === elem.lastChild;
-      for (let i = 0; i < document.body.childNodes.length; i++) {
-        alert(document.body.childNodes[i]); // Text, DIV, Text, UL, ..., SCRIPT
+      let elem = document.body;
+      console.log(elem.childNodes[0] === elem.firstChild); //true
+      console.log(elem.childNodes.length); //8
+      console.log(elem.lastChild); // <script>
+      console.log(
+        elem.childNodes[elem.childNodes.length - 1] === elem.lastChild
+      ); //true
+
+      for (let i = 0; i < elem.childNodes.length; i++) {
+        console.log(elem.childNodes[i]); // Text, DIV, Text, UL, ..., SCRIPT
       }
     </script>
     ...more stuff...
