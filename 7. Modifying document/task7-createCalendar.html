@@ -1,0 +1,47 @@
+<!-- Create a calendar
+importance: 4
+Write a function createCalendar(elem, year, month).
+
+The call should create a calendar for the given year/month and put it inside elem.
+
+The calendar should be a table, where a week is <tr>, and a day is <td>. The table top should be <th> with weekday names: the first day should be Monday, and so on till Sunday.
+
+For instance, createCalendar(cal, 2012, 9) should generate in element cal the following calendar:
+
+
+P.S. For this task it’s enough to generate the calendar, should not yet be clickable. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 3px;
+        text-align: center;
+      }
+
+      th {
+        font-weight: bold;
+        background-color: #e6e6e6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="calendar"></div>
+
+    <script>
+      function createCalendar(elem, year, month) {
+        let mon = month - 1;
+      }
+
+      createCalendar(calendar, 2012, 9);
+    </script>
+  </body>
+</html>
