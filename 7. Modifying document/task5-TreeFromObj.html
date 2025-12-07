@@ -1,0 +1,89 @@
+<!-- Create a tree from the object
+importance: 5
+Write a function createTree that creates a nested ul/li list from the nested object.
+
+For instance:
+
+let data = {
+  "Fish": {
+    "trout": {},
+    "salmon": {}
+  },
+
+  "Tree": {
+    "Huge": {
+      "sequoia": {},
+      "oak": {}
+    },
+    "Flowering": {
+      "apple tree": {},
+      "magnolia": {}
+    }
+  }
+};
+The syntax:
+
+let container = document.getElementById('container');
+createTree(container, data); // creates the tree in the container
+
+
+Choose one of two ways of solving this task:
+
+1. Create the HTML for the tree and then assign to container.innerHTML.
+2. Create tree nodes and append with DOM methods.
+Would be great if you could do both.
+
+P.S. The tree should not have “extra” elements like empty <ul></ul> for the leaves.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            'apple tree': {},
+            magnolia: {},
+          },
+        },
+      };
+
+      let container = document.getElementById('container');
+
+      function createTreeText(data) {
+        let li = '';
+        let ul;
+        for (let key in obj) {
+          li += '<li>' + key + createTreeText(data[key]) + '</li>';
+        }
+        if (li) {
+          ul = '<ul>' + li + '</ul>';
+        }
+        return ul || '';
+      }
+
+      function createTree(container, data) {
+        container.innerHtml = createTreeText(data);
+      }
+
+      createTree(container, data); // creates the tree in the container
+    </script>
+  </body>
+</html>
