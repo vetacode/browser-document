@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main style="position: relative" id="main">
+      <article>
+        <div id="example" style="position: absolute; left: 180px; top: 180px">
+          Introduction This Ecma Standard is based on several originating
+          technologies, the most well known being JavaScript (Netscape) and
+          JScript (Microsoft). The language was invented by Brendan Eich at
+          Netscape and first appeared in that company’s Navigator 2.0 browser.
+          It has appeared in all subsequent browsers from Netscape and in all
+          browsers from Microsoft
+        </div>
+      </article>
+    </main>
+    <script>
+      console.log(example.offsetParent.id); // main
+      console.log(example.offsetLeft); // 180 (note: a number, not a string "180px")
+      console.log(example.offsetTop); // 180 (number)
+    </script>
+  </body>
+</html>
