@@ -1,0 +1,29 @@
+<!-- Insert the HTML in the list
+importance: 5
+Write the code to insert <li>2</li><li>3</li> between two <li> here:
+
+<ul id="ul">
+  <li id="one">1</li>
+  <li id="two">4</li>
+</ul> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="ul">
+      <li id="one">1</li>
+      <li id="two">4</li>
+    </ul>
+    <script>
+      let ul = document.getElementById('ul');
+      let liFirst = ul.firstElementChild; //lebih cepat dibanding getElementById/TagName/querySelector/.children[0]
+      liFirst.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
+      // li.nextElementSibling.insertAdjacentHTML('afterend', '<li>3</li>'); //ga perlu satu2 masukin, krn bs digabung diatas
+    </script>
+  </body>
+</html>
