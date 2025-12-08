@@ -1,0 +1,23 @@
+<!-- The method:
+elem.getBoundingClientRect() => it returns window coordinates for a minimal rectangle that encloses elem as an object of built-in DOMRect class. 
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      id="brTest"
+      type="button"
+      style="max-width: 90vw"
+      value="Get coordinates using button.getBoundingClientRect() for this button"
+      onclick="showRect(this)"
+    />
+  </body>
+</html>
