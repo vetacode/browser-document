@@ -1,0 +1,27 @@
+<!-- Forbid the Scrolling (Unscrollable)
+
+document.body.style.overflow = "hidden".
+The page will “freeze” at its current scroll position.
+
+It used when we need to cover the page with a large message requiring immediate attention,
+and we want the visitor to interact with that message, not with the document. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- to forbid/hide the scroll -->
+    <button onclick="document.body.style.overflow = 'hidden'">
+      document.body.style.overflow = ‘hidden’
+    </button>
+
+    <!-- to release it -->
+    <button onclick="document.body.style.overflow = ''">
+      document.body.style.overflow = ‘’
+    </button>
+  </body>
+</html>
