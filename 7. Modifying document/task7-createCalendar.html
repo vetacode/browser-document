@@ -37,42 +37,134 @@ P.S. For this task it’s enough to generate the calendar, should not yet be cli
     <div id="calendar"></div>
 
     <script>
+      // function createCalendar(elem, year, month) {
+      //   let mon = month - 1;
+      //   let d = new Date(year, mon);
+      //   console.log('d is:', d);
+
+      //   let table =
+      //     '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</><th>FR</th><th>SA</><th>SU</th></tr><tr>';
+
+      //   console.log(getDayIndex(d));
+
+      //   for (let i = 0; i < getDayIndex(d); i++) {
+      //     table += '<td></td>';
+      //   }
+
+      //   while (d.getMonth() == mon) {
+      //     table += '<td>' + d.getDate() + '</td>';
+      //     if (getDayIndex(d) % 7 == 6) {
+      //       table += '</tr><tr>';
+      //     }
+      //     d.setDate(d.getDate() + 1);
+      //   }
+
+      //   if (getDayIndex(d) != 0) {
+      //     for (let i = getDayIndex(d); i < 7; i++) {
+      //       table += '<td></td>';
+      //     }
+      //   }
+
+      //   table += '</tr></table>';
+
+      //   elem.innerHTML = table;
+      // }
+
+      // function getDayIndex(date) {
+      //   let day = date.getDay();
+      //   console.log(day);
+      //   if (day == 0) day = 7;
+      //   return day - 1;
+      // }
+
+      // <-----------------versi custom---------------------->
+
+      // Konversi JS getDay() (0..6, Minggu..Sabtu)
+      // menjadi index yang dimulai dari Senin: 0..6 (Senin..Minggu)
+      function getCalendarDayIndex(date) {
+        let jsDay = date.getDay(); // 0..6 (JS)
+        if (jsDay === 0) jsDay = 7; // ubah Minggu (0) jadi 7
+        return jsDay - 1; // jadi Senin=0 ... Minggu=6
+      }
+
+      // Fungsi logging rapi (harus didefinisikan sebelum dipanggil)
+      function logDay(prefix, date) {
+        const jsDay = date.getDay(); // 0..6
+        const calendarDay = getCalendarDayIndex(date); // 0..6, Monday-first
+        const dayNames = [
+          'Senin',
+          'Selasa',
+          'Rabu',
+          'Kamis',
+          'Jumat',
+          'Sabtu',
+          'Minggu',
+        ];
+
+        // Jika date.getDate() tidak ada (mis. date di luar range bulan), tampilkan '-'
+        const dateNum =
+          typeof date.getDate === 'function' ? date.getDate() : '-';
+
+        console.log(
+          `${prefix} | Tgl: ${dateNum} | JS getDay(): ${jsDay} | ` +
+            `Index Mon-first: ${calendarDay} | Hari: ${dayNames[calendarDay]}`
+        );
+      }
+
+      // Versi createCalendar yang lengkap dan memakai logDay()
       function createCalendar(elem, year, month) {
-        let mon = month - 1;
-        let d = new Date(year, mon);
-        console.log(d);
+        let mon = month - 1; // monthIndex 0..11
+        let d = new Date(year, mon, 1); // mulai dari tanggal 1 bulan itu
+
+        console.log('=== START CALENDAR ===');
+        logDay('Initial (pre-loop)', d);
 
         let table =
-          '<table><tr><th>MO</th><th>TU</><th>WE</th><th>TH</><th>FR</th><th>SA</><th>SU</th></tr><tr>';
+          '<table border="1" cellpadding="4" cellspacing="0">' +
+          '<tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
 
-        for (let i = 0; i < getDay(d); i++) {
+        // Leading empty cells (hari sebelum tanggal 1)
+        let startIndex = getCalendarDayIndex(d);
+        console.log(`Leading empty cells: ${startIndex}`);
+        for (let i = 0; i < startIndex; i++) {
           table += '<td></td>';
         }
 
-        while (d.getMonth() == mon) {
+        // Main loop: tambahkan setiap tanggal sampai bulan berganti
+        while (d.getMonth() === mon) {
+          logDay('Loop', d);
+
           table += '<td>' + d.getDate() + '</td>';
-          if (getDay(d) % 7 == 6) {
+
+          // jika hari adalah Minggu (index 6) -> akhiri baris
+          if (getCalendarDayIndex(d) === 6) {
+            console.log('→ End of week (Sunday) -> insert </tr><tr>');
             table += '</tr><tr>';
           }
+
+          // next day
           d.setDate(d.getDate() + 1);
         }
 
-        if (getDay(d) != 0) {
-          for (let i = getDay(d); i < 7; i++) {
+        // Setelah loop, d = tanggal 1 bulan berikutnya
+        logDay('After loop (first of next month)', d);
+        const endIndex = getCalendarDayIndex(d);
+        console.log(`Trailing empty cells from index ${endIndex} to 6`);
+
+        if (endIndex !== 0) {
+          for (let i = endIndex; i < 7; i++) {
             table += '<td></td>';
           }
         }
 
         table += '</tr></table>';
-
         elem.innerHTML = table;
+
+        console.log('=== END CALENDAR ===');
       }
 
-      function getDay(date) {
-        let day = date.getDay();
-        if (day == 0) day = 7;
-        return day - 1;
-      }
+      // Panggil fungsi: contoh Desember 2025
+      const calendarElem = document.getElementById('calendar');
 
       createCalendar(calendar, 2025, 12);
     </script>
