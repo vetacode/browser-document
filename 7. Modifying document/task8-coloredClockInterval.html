@@ -1,0 +1,93 @@
+<!-- Colored clock with setInterval
+importance: 4
+Create a colored clock like here:
+
+Use HTML/CSS for the styling, JavaScript only updates time in elements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: block;
+        align-content: center;
+      }
+
+      #clock {
+        font-size: 30px;
+      }
+
+      .hour {
+        color: red;
+      }
+
+      .min {
+        color: green;
+      }
+
+      .sec {
+        color: blue;
+      }
+      button {
+        padding: 8px 18px;
+        border: 1px solid black;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: greenyellow;
+      }
+
+      button:active {
+        background-color: rgb(138, 205, 37);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="clock">
+        <span class="hour">hh</span>: <span class="min">mm</span>:
+        <span class="sec">ss</span>
+      </div>
+      <button type="button" onclick="clockStart()" value="start">Start</button>
+      <button type="button" onclick="clockStop()" value="stop">Stop</button>
+    </div>
+
+    <script>
+      let timerId;
+      function update() {
+        // let clock = document.getElementById('clock');
+        let date = new Date();
+
+        let hours = date.getHours();
+        if (hours < 10) hours = '0' + hours;
+        clock.children[0].innerHTML = hours;
+
+        let minutes = date.getMinutes();
+        if (minutes < 10) minutes = '0' + minutes;
+        clock.children[1].innerHTML = minutes;
+
+        let seconds = date.getSeconds();
+        if (seconds < 10) seconds = '0' + seconds;
+        clock.children[2].innerHTML = seconds;
+      }
+
+      function clockStart() {
+        if (!timerId) {
+          timerId = setInterval(update, 1000);
+        }
+        update();
+      }
+
+      function clockStop() {
+        clearInterval(timerId);
+        timerId = null;
+      }
+    </script>
+  </body>
+</html>
