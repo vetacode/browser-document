@@ -1,0 +1,14 @@
+<!-- To get window width and height, we can use the clientWidth/clientHeight of document.documentElement
+ It returns the width/height of the VISIBLE PART of the document, available for the content, NOT include scrollbar width & height
+NOTES: window.innerWidth/innerHeight includes the scrollbar.
+
+THEREFORE:
+alert( window.innerWidth ); // full window width
+alert( document.documentElement.clientWidth ); // window width minus the scrollbar
+
+
+DOCTYPE is important
+Top-level geometry properties may work a little bit differently when there’s no <!DOCTYPE HTML> in HTML. Odd things are possible.
+
+In modern HTML we MUST always write DOCTYPE.
+-->
