@@ -1,0 +1,22 @@
+<!-- Scrolling: scrollTo, scrollBy, scrollIntoView
+
+scrollBy(x,y) => scrolls the page relative to its current position. For instance, scrollBy(0,10) scrolls the page 10px down.
+scrollTo(pageX,pageY) => scrolls the page to absolute coordinates, so that the top-left corner of the visible part has coordinates (pageX, pageY) relative to the document’s top-left corner.
+scrollTo(0,0) => To scroll to the very beginning
+scrollIntoView(top) => scrolls the page to make elem visible. It has one argument: top=true (snap to the element on the top) or top=false (snap on the bottom) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="this.scrollIntoView()">this.scrollIntoView(true)</button>
+    <button onclick="this.scrollIntoView(false)">
+      this.scrollIntoView(false)
+    </button>
+    <script></script>
+  </body>
+</html>
