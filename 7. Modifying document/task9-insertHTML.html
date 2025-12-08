@@ -20,10 +20,13 @@ Write the code to insert <li>2</li><li>3</li> between two <li> here:
       <li id="two">4</li>
     </ul>
     <script>
-      let ul = document.getElementById('ul');
-      let liFirst = ul.firstElementChild; //lebih cepat dibanding getElementById/TagName/querySelector/.children[0]
-      liFirst.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
-      // li.nextElementSibling.insertAdjacentHTML('afterend', '<li>3</li>'); //ga perlu satu2 masukin, krn bs digabung diatas
+      // let ul = document.getElementById('ul');
+      // let liFirst = ul.firstElementChild; //lebih cepat dibanding getElementById/TagName/querySelector/.children[0]
+      // liFirst.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
+      // // li.nextElementSibling.insertAdjacentHTML('afterend', '<li>3</li>'); //ga perlu satu2 masukin, krn bs digabung diatas
+
+      // <------------ BEST SOLUTION ----------------->
+      one.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
     </script>
   </body>
 </html>
