@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // doesn't work!
+      document.body.style.margin = 20;
+      alert(document.body.style.margin); // '' (empty string, the assignment is ignored)
+
+      // now add the CSS unit (px) - and it works
+      document.body.style.margin = '20px';
+      alert(document.body.style.margin); // 20px
+
+      alert(document.body.style.marginTop); // 20px
+      alert(document.body.style.marginLeft); // 20px
+    </script>
+  </body>
+</html>
