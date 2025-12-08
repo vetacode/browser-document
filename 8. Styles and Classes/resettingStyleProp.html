@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // if we run this code, the <body> will blink
+      document.body.style.display = 'none'; // hide
+      setTimeout(() => (document.body.style.display = ''), 1000); // back to normal
+
+      document.body.style.background = 'red'; //set background to red
+      setTimeout(() => document.body.style.removeProperty('background'), 1000); // remove background after 1 second
+    </script>
+  </body>
+</html>
