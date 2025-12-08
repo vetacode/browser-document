@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
+  <!-- <-------- part 3 ---------->
+  <div id="div">Button</div>
+
   <body>
     <script>
       // if we run this code, the <body> will blink
@@ -13,6 +17,15 @@
 
       document.body.style.background = 'red'; //set background to red
       setTimeout(() => document.body.style.removeProperty('background'), 1000); // remove background after 1 second
+
+      // <!-- <------------ part 3 ------------------> -->
+      // we can set special style flags like "important" here
+      div.style.cssText = `color: red !important;
+    background-color: yellow;
+    width: auto;
+    text-align: center;
+    font-size:40px;
+  `;
     </script>
   </body>
 </html>
