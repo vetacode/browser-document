@@ -1,0 +1,36 @@
+<!-- Syntax:
+
+1. elem.className
+
+2. Methods of classList:
+
+elem.classList.add/remove("class") – adds/removes the class.
+elem.classList.toggle("class") – adds the class if it doesn’t exist, otherwise removes it.
+elem.classList.contains("class") – checks for the given class, returns true/false. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="main page">
+    <script>
+      //check the class name using className
+      document.body.className;
+      console.log(document.body.className); // main page
+
+      // add a class using classList
+      document.body.classList.add('article');
+      console.log(document.body.className); // main page article
+
+      //classList is iterable:
+      for (let name of document.body.classList) {
+        let arrLists = Array.from(document.body.classList);
+        console.log(arrLists);
+        console.log(name); // main, page, article
+      }
+    </script>
+  </body>
+</html>
