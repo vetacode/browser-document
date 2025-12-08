@@ -35,7 +35,7 @@ Use HTML/CSS for the styling, JavaScript only updates time in elements. -->
         padding: 8px 18px;
         border: 1px solid black;
         border-radius: 20px;
-        transition: all 0.3s;
+        /* transition: all 0.3s; */
       }
 
       button:hover {
@@ -59,9 +59,8 @@ Use HTML/CSS for the styling, JavaScript only updates time in elements. -->
     </div>
 
     <script>
-      let timerId;
       function update() {
-        // let clock = document.getElementById('clock');
+        let clock = document.getElementById('clock');
         let date = new Date();
 
         let hours = date.getHours();
@@ -77,16 +76,21 @@ Use HTML/CSS for the styling, JavaScript only updates time in elements. -->
         clock.children[2].innerHTML = seconds;
       }
 
+      let timerId; //akan berisi ID interval (angka) yang diberikan oleh setInterval().
+
       function clockStart() {
+        // set a new interval only if the clock is stopped
+        // otherwise we would rewrite the timerID reference to the running interval and wouldn't be able to stop the clock ever again
         if (!timerId) {
-          timerId = setInterval(update, 1000);
+          timerId = setInterval(update, 1000); //setInterval(update, 1000) memanggil update() setiap 1 detik.
+          //it returns angka ID, misalnya 12, 45, 88, dsb.
         }
-        update();
+        update(); // <--  start right now, don't wait 1 second till the first setInterval works
       }
 
       function clockStop() {
         clearInterval(timerId);
-        timerId = null;
+        timerId = null; // <-- clear timerID to indicate that the clock has been stopped, so that it is possible to start it again in clockStart()
       }
     </script>
   </body>
