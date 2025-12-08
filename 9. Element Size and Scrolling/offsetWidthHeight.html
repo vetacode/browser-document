@@ -1,0 +1,25 @@
+<!-- offsetWidth/Height is the full size including borders. -->
+<!-- NOTES: 
+ 
+Geometry properties are zero/null for elements that are not displayed
+has value 0 or display:none
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //to check if an element is hidden
+      //isHidden returns true for elements that are on-screen, but have zero sizes.
+      function isHidden(elem) {
+        return !elem.offsetWidth && !elem.offsetHeight;
+      }
+    </script>
+  </body>
+</html>
