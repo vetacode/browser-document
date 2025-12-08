@@ -1,0 +1,28 @@
+<!-- Syntax: getComputedStyle(element, [pseudo]). It returns the resolved value of the property, usually in px for geometry. -->
+<!-- 
+element
+Element to read the value for.
+pseudo
+A pseudo-element if required, for instance ::before. An empty string or no argument means the element itself.
+ -->
+
+<!-- NOTES: Styles applied to :visited links are hidden! -->
+
+<head>
+  <style>
+    body {
+      color: red;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    let computedStyle = getComputedStyle(document.body);
+
+    // now we can read the margin and the color from it
+
+    console.log(computedStyle.marginTop); // 5px
+    console.log(computedStyle.color); // rgb(255, 0, 0)
+  </script>
+</body>
