@@ -1,0 +1,50 @@
+<!-- Most of time we need coordinates in order to position something.
+
+To show something near an element:
+use getBoundingClientRect to get its coordinates, then CSS position together with left/top (or right/bottom).
+
+NOTES:
+when the page is scrolled, the message flows away from the button.
+
+Reason: the message element relies on position:fixed, so it remains at the same place of the window while the page scrolls away.
+
+To change that, we need to use document-based coordinates and position:absolute.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let elem = document.getElementById('coords-show-mark');
+
+      function createMessageUnder(elem, html) {
+        // create message element
+        let message = document.createElement('div');
+        // better to use a css class for the style here
+        message.style.cssText = 'position:fixed; color: red';
+
+        // assign coordinates, don't forget "px"!
+        let coords = elem.getBoundingClientRect();
+
+        message.style.left = coords.left + 'px';
+        message.style.top = coords.bottom + 'px';
+
+        message.innerHTML = html;
+
+        return message;
+      }
+
+      // Usage:
+      // add it for 5 seconds in the document
+      let message = createMessageUnder(elem, 'Hello, world!');
+      document.body.append(message);
+      setTimeout(() => message.remove(), 5000);
+    </script>
+  </body>
+</html>
