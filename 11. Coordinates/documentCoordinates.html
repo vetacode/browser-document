@@ -1,0 +1,48 @@
+<!-- 
+The two coordinate systems are connected by the formula:
+
+pageY = clientY + height of the scrolled-out vertical part of the document.
+pageX = clientX + width of the scrolled-out horizontal part of the document.
+
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // get document coordinates of the element
+      function getCoords(elem) {
+        let box = elem.getBoundingClientRect();
+
+        return {
+          top: box.top + window.pageYOffset,
+          right: box.right + window.pageXOffset,
+          bottom: box.bottom + window.pageYOffset,
+          left: box.left + window.pageXOffset,
+        };
+      }
+
+      //Using position:absolute, then the message would stay near the element on scroll.
+      function createMessageUnder(elem, html) {
+        let message = document.createElement('div');
+        message.style.cssText = 'position:absolute; color: red';
+
+        let coords = getCoords(elem);
+
+        message.style.left = coords.left + 'px';
+        message.style.top = coords.bottom + 'px';
+
+        message.innerHTML = html;
+
+        return message;
+      }
+    </script>
+  </body>
+</html>
