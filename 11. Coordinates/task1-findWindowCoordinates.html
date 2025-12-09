@@ -80,54 +80,74 @@ P.S. The code should also work if the element has another size or border, not bo
     <div class="triangle-right" style="left: 200px; top: -42px">2</div>
 
     <script>
-      let coords = field.getBoundingClientRect();
-      console.log(coords);
+      const field = document.getElementById('field');
+      const coordsBox = document.getElementById('coords');
 
-      /*
-innerHTML: "30:101"
-bottom: 271
-height: 170
-left: 29
-right: 249
-top: 101
-width: 220
-x: 29
-y: 101
-      */
+      function computeRects() {
+        return field.getBoundingClientRect();
+      }
 
-      let answer1 = [coords.left, coords.top];
-      let answer2 = [coords.right, coords.bottom];
-      console.log(answer1); //[29,101]
-      console.log(answer2); //[247,271]
+      // penggunaan
+      const rect = computeRects();
+      console.log(rect);
 
-      let answer3 = [
-        coords.left + field.clientLeft,
-        coords.top + field.clientTop,
+      const answer1 = [rect.left, rect.top];
+      const answer2 = [rect.right, rect.bottom];
+      console.log(answer1, answer2);
+
+      const answer3 = [
+        rect.left + field.clientLeft,
+        rect.top + field.clientTop,
       ];
-      console.log(field.clientLeft);
-      console.log(field.clientTop);
-      console.log(answer3); //[39,111]
+      console.log(answer3);
 
-      let answer4 = [
-        coords.right - parseInt(getComputedStyle(field).borderRightWidth),
-        coords.bottom - parseInt(getComputedStyle(field).borderBottomWidth),
-      ];
-
-      console.log(getComputedStyle(field));
-
-      let innerBottom = getComputedStyle(field).borderRightWidth;
-      console.log(innerBottom); //'10px'
-      console.log(typeof innerBottom); //string
-
-      console.log(parseInt(innerBottom)); //10
-      console.log(typeof parseInt(innerBottom)); //number
-
-      console.log(answer4); //[239,261]
+      const style = getComputedStyle(field);
+      const rightBorder = parseInt(style.borderRightWidth);
+      const bottomBorder = parseInt(style.borderBottomWidth);
+      const answer4 = [rect.right - rightBorder, rect.bottom - bottomBorder];
+      console.log(answer4);
 
       document.onclick = function (e) {
-        // shows click coordinates
-        console.log((coords.innerHTML = e.clientX + ':' + e.clientY));
+        // gunakan coordsBox (elemen) untuk menampilkan teks
+        coordsBox.innerHTML = e.clientX + ':' + e.clientY;
       };
+
+      // let coords = field.getBoundingClientRect();
+      // console.log(coords);
+
+      // let answer1 = [coords.left, coords.top];
+      // let answer2 = [coords.right, coords.bottom];
+      // console.log(answer1); //[29,101]
+      // console.log(answer2); //[247,271]
+
+      // let answer3 = [
+      //   coords.left + field.clientLeft,
+      //   coords.top + field.clientTop,
+      // ];
+      // console.log(field.clientLeft);
+      // console.log(field.clientTop);
+      // console.log(answer3); //[39,111]
+
+      // let answer4 = [
+      //   coords.right - parseInt(getComputedStyle(field).borderRightWidth),
+      //   coords.bottom - parseInt(getComputedStyle(field).borderBottomWidth),
+      // ];
+
+      // console.log(getComputedStyle(field));
+
+      // let innerBottom = getComputedStyle(field).borderRightWidth;
+      // console.log(innerBottom); //'10px'
+      // console.log(typeof innerBottom); //string
+
+      // console.log(parseInt(innerBottom)); //10
+      // console.log(typeof parseInt(innerBottom)); //number
+
+      // console.log(answer4); //[239,261]
+
+      // document.onclick = function (e) {
+      //   // shows click coordinates
+      //   console.log((coords.innerHTML = e.clientX + ':' + e.clientY));
+      // };
     </script>
   </body>
 </html>
