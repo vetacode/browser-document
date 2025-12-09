@@ -1,7 +1,15 @@
 <!-- The method:
 elem.getBoundingClientRect() => it returns window coordinates for a minimal rectangle that encloses elem as an object of built-in DOMRect class. 
 
+calculated derived props:
+left = x
+top = y
+right = x + width
+bottom = y + height
 
+NOTES:
+in JavaScript, All window coordinates are counted from the top-left corner. it differ with CSS positioning
+But in CSS positioning, right property means the distance from the right edge, and bottom property means the distance from the bottom edge.
 -->
 
 <!DOCTYPE html>
