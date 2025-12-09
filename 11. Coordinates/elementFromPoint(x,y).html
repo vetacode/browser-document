@@ -1,0 +1,49 @@
+<!-- elementFromPoint(x, y) => it returns the most nested element at window coordinates (x, y).
+
+syntax:
+let elem = document.elementFromPoint(x, y); 
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+
+      .box {
+        font-size: 50px;
+      }
+
+      div.box[title='box2'] {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <div class="box" title="box1">BOX1</div>
+    <div class="box" title="box2">BOX2</div>
+    <script>
+      //highlights and outputs the tag of the element that is now in the middle of the window:
+      let centerX = document.documentElement.clientWidth / 2;
+      let centerY = document.documentElement.clientHeight / 2;
+
+      let elem = document.elementFromPoint(centerX, centerY);
+
+      elem.style.background = 'red';
+      // alert(elem.tagName);
+    </script>
+  </body>
+</html>
